@@ -50,4 +50,4 @@ NP-hard problms are usually solved in the following ways:
 Other approaches include:
    - Branch-and-bound algorithms, which are used to process TSPs which contain 40-60 cities. 
    - Progressive improvement algorithms: These use techniques similar to linear programming      and works well for up to 200 cities.
-   -  
+   - Implementations of branch-and-bound and branch-an-cut: This method should be used to         solve a very large number of instances. Currently, this method holds the record with      85,900 cities.  
