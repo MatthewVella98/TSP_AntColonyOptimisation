@@ -162,19 +162,21 @@ class ACO:
             self.acs()
         elif self.method == 'Elitist':
             self.elitist()
-        else:
+        else: 
             self.max_min()
         print('Root_Result : <- {0} ->'.format(' - '.join(str(self.labels[i]) for i in self.tour_final)))
         print('Distance : {0}\n'.format(round(self.distance_final, 2)))
         return round(self.distance_final, 2)
+    
     def plot(self, line_width=1, radius=math.sqrt(2.0), size_ann=8, dpi=120, save=True, name=None,dis=None):
         x = [self.nodes[i][0] for i in self.tour_final]  
         x.append(x[0])
         y = [self.nodes[i][1] for i in self.tour_final]
-        y.append(y[0])
-        plt.plot(x, y, linewidth=line_width)
+        y.append(y[0]) 
+        plt.plot(x, y, linewidth=line_width, color='red')
         plt.scatter(x, y, s=math.pi * (radius ** 2.0))
-        plt.title(name + '-' + self.method)
+        #plt.title(name + '-' + self.method)
+        plt.title('ACO Variant: ' + self.method + '      ' + 'TSP Name: ' + name)
         plt.text(0.8,
          0.05, 
          "Distance = {}".format(dis), 
